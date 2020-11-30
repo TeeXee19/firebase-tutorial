@@ -38,24 +38,24 @@
     </nav>
 </template>
 <script>
-	import { mapGetters } from 'vuex'
-	import { auth } from "../firebaseDb"
+import { mapGetters } from 'vuex';
+import { auth } from '../firebaseDb';
 	
-	export default ({
+export default {
 	  computed: {
-	  	mapGetters({
-	  		user: "user"
-	  	})
-	  },
+			...mapGetters({
+				user: 'user'
+			})
+		},
 	  methods: {
 	  	signOut() {
 	  		auth.signOut()
 	  		.then(() => {
 	  			this.$router.replace({
-	  				name: "home"
+	  				name: 'home'
 	  			});
 	  		});
 	  	}
 	  }
-	});
+	};
 </script>
