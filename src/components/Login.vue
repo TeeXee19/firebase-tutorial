@@ -43,7 +43,7 @@
 			submit() {
 				auth.signInWithEmailAndPassword(this.form.email, this.form.password)
 				.then(data => {
-					this.$route.replace({name: 'Dashboard'});
+					this.$router.replace({name: 'Dashboard'});
 				})
 				.catch(err => {
 					this.error = err.message;
