@@ -26,7 +26,9 @@
     </div>
   </div>
 </template>
-
+<style lang="sass">
+  
+</style>
 <script>
 import { db } from '../firebaseDb';
 

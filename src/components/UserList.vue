@@ -63,8 +63,6 @@
 	}	
 </script>
 
-<style>
-	.btn-primary{
-		margin-right: 12px;
-	}	
+<style >
+	
 </style>

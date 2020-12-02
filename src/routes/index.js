@@ -6,21 +6,6 @@ Vue.use(VueRouter)
 const routes = [
 	{
 		path: '/',
-		name: 'add',
-		component: () => import('../components/UserCreate')
-	},
-	{
-		path: '/list',
-		name: 'list',
-		component: () => import('../components/UserList')
-	},
-	{
-		path: '/edit/:id',
-		name: 'edit',
-		component: () => import('../components/UserEdit')
-	},
-	{
-		path: '/login',
 		name: 'Login',
 		component: () => import('../components/Login')
 	},
@@ -32,7 +17,24 @@ const routes = [
 	{
 		path: '/dashboard',
 		name: 'Dashboard',
-		component: () => import('../components/Dashboard')
+		component: () => import('../components/Dashboard'),
+		children: [
+      {
+		path: '/add',
+			name: 'add',
+			component: () => import('../components/UserCreate')
+  },
+  {
+			path: '/list',
+			name: 'list',
+	component: () => import('../components/UserList')
+  },
+		{  
+			path: '/edit/:id',
+			name: 'edit',
+			component: () => import('../components/UserEdit')
+  },
+    ]
 	}
 
 

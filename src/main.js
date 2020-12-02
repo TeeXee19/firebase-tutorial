@@ -3,7 +3,9 @@ import App from './App.vue'
 import router from './routes'
 import { auth } from './firebaseDb'
 import store from './store'
+import custom from './custom'
 
+Vue.use(custom)
 
 import 'bootstrap/dist/css/bootstrap.min.css'
 
