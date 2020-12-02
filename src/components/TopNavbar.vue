@@ -1,7 +1,6 @@
 <template>
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Dashboard</a>
       <button type="button"
               class="navbar-toggler navbar-toggler-right"
               :class="{toggled: $sidebar.showSidebar}"
@@ -30,19 +29,9 @@
               Account
             </a>
           </li>
-          <base-dropdown title="Dropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something</a>
-            <div class="divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
-          </base-dropdown>
+
           <li class="nav-item">
-            <a href="#" class="nav-link">
-              Log out
-            </a>
+            <a href="#" class="nav-link" @click.prevent="signOut">Log Out</a>
           </li>
         </ul>
       </div>
@@ -50,8 +39,12 @@
   </nav>
 </template>
 <script>
+import { mapGetters } from 'vuex'
   export default {
     computed: {
+  ...mapGetters({
+    user: "user"
+    }),
       routeName () {
         const {name} = this.$route
         return this.capitalizeFirstLetter(name)
@@ -72,7 +65,13 @@
       },
       hideSidebar () {
         this.$sidebar.displaySidebar(false)
-      }
+      },
+      signOut() {
+      auth.signOut()
+        .then(() => {
+        this.$router.replace({
+            name: 'login'});});
+       }
     }
   }
 
