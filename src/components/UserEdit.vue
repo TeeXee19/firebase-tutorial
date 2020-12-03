@@ -1,7 +1,8 @@
 <template>
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <h3 class="text-center">Update User</h3>
+    <card class="col-md-5">
+      <template slot="header">
+            <h3 class="card-title text-center">Update User</h3>
+          </template> 
       <form @submit.prevent="onUpdateForm">
         <div class="form-group">
           <label>Name: </label>
@@ -23,8 +24,7 @@
         </div>
       
       </form>
-    </div>
-  </div>
+  </card>
 </template>
 <style lang="sass">
   

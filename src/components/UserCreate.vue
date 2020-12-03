@@ -1,7 +1,8 @@
 <template>
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <h3 class="text-center">Add User</h3>
+  <card class="col-md-5 justify-content-center">
+      <template slot="header">
+            <h3 class="card-title text-center">Add User</h3>
+          </template> 
       <form @submit.prevent="onFormSubmit">
         <div class="form-group">
           <label>Name: </label>
@@ -19,8 +20,7 @@
           <button class="btn btn-primary btn-block">Add User</button>
         </div>
       </form>
-    </div>
-  </div>
+  </card>
 </template>
 
 <script>

@@ -7,7 +7,6 @@ import custom from './custom'
 
 Vue.use(custom)
 
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 Vue.config.productionTip = false
 

@@ -1,7 +1,8 @@
 import SideBar from './components/SidebarPlugin'
+import Card from './components/Cards/Card.vue'
 
 // asset imports
-import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import './assets/sass/light-bootstrap-dashboard.scss'
 import './assets/css/demo.css'
 
@@ -11,5 +12,6 @@ import './assets/css/demo.css'
 export default {
     install (Vue) {
     	Vue.use(SideBar)
+    	Vue.component('card',Card)
     }
 }

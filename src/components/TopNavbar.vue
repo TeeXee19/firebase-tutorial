@@ -40,6 +40,7 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import { auth } from '../firebaseDb'
   export default {
     computed: {
   ...mapGetters({
@@ -70,7 +71,7 @@ import { mapGetters } from 'vuex'
       auth.signOut()
         .then(() => {
         this.$router.replace({
-            name: 'login'});});
+            name: 'Login'});});
        }
     }
   }

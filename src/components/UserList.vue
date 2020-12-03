@@ -1,6 +1,5 @@
 <template >
-	<div class="row">
-		<div class="col-md-12">
+		<card class="container col-12 mt-2">
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -16,14 +15,14 @@
 						<td>{{ user.email}}</td>
 						<td>{{ user.phone}}</td>
 						<td>
-							<router-link :to="{name: 'edit', params: { id: user.key }}" class="btn btn-primary">Edit</router-link>
-							<button @click.prevent="deleteUser(user.key)" class="btn btn-danger">Delete</button>
+							<router-link :to="{name: 'edit', params: { id: user.key }}" class="btn btn-primary m-1">Edit</router-link>
+
+							<button @click.prevent="deleteUser(user.key)" class="btn btn-danger m-1">Delete</button>
 						</td>
 					</tr>
 				</tbody>
 			</table>
-		</div>
-	</div>
+		</card>
 </template>
 
 <script>
